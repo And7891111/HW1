@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/town_level.gd" id="1_town"]
+[ext_resource type="PackedScene" path="res://scenes/portal.tscn" id="2_portal"]
+
+[node name="TownLevel" type="Node3D"]
+script = ExtResource("1_town")
+
+[node name="ReturnPortal" parent="." instance=ExtResource("2_portal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+target_scene = "res://scenes/snow_map.tscn"
+portal_id = &"town_entry"
+target_portal_id = &"snow_tunnel"
+spawn_offset = Vector3(0, 0.02, -11)
+trigger_size = Vector3(6, 4, 3)
